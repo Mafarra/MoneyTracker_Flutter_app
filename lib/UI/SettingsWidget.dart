@@ -55,27 +55,27 @@ class _SettingsState extends State<SettingsWidget> {
     return num.tryParse(s) != null;
   }
 
-  void _openEditSubscription(BuildContext ctx) async {
-    // start the SecondScreen and wait for it to finish with a result
-    final result = await Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => EditSubscriptionWidget(
-            mode: "",
-            item: null,
-            ctx: ctx,
-            currency: widget.stringData["currency"],
-          ),
-        ));
-    // Save any  Subscriptions
-    if (result != null) {
-      widget.subscriptions.add(result);
-      setState(() {
-        _saveSubscription(result);
-        FocusScope.of(context).unfocus();
-      });
-    }
-  }
+  // void _openEditSubscription(BuildContext ctx) async {
+  //   // start the SecondScreen and wait for it to finish with a result
+  //   final result = await Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //         builder: (context) => EditSubscriptionWidget(
+  //           mode: "",
+  //           item: null,
+  //           ctx: ctx,
+  //           currency: widget.stringData["currency"],
+  //         ),
+  //       ));
+  //   // Save any  Subscriptions
+  //   if (result != null) {
+  //     widget.subscriptions.add(result);
+  //     setState(() {
+  //       _saveSubscription(result);
+  //       FocusScope.of(context).unfocus();
+  //     });
+  //   }
+  // }
 
   Future<void> _showMyDialog(String Value, BuildContext ctx) async {
     return showDialog<void>(
@@ -120,16 +120,16 @@ class _SettingsState extends State<SettingsWidget> {
     );
   }
 
-  void _openSubscriptionList() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => SubscriptionListWidget(
-            subscriptions: widget.subscriptions,
-            currency: widget.stringData["currency"],
-          ),
-        ));
-  }
+  // void _openSubscriptionList() {
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //         builder: (context) => SubscriptionListWidget(
+  //           subscriptions: widget.subscriptions,
+  //           currency: widget.stringData["currency"],
+  //         ),
+  //       ));
+  // }
 
   @override
   Widget build(BuildContext context) {
